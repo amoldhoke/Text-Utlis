@@ -1,24 +1,19 @@
 {
-    "version": 2, 
+    "version": 2,
     "builds": [
-       { 
-            "src": "HRMS/wsgi.py", 
-            "use": "@vercel/python", 
-            "config": { "maxLambdaSize":"15mb", "runtime": "python3.9" } 
-	    },
-	    {
-            "src": "build_files.sh", 
-            "use": "@vercel/static-build"
+        {
+            "src": "HRMS/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.9"
+            }
         }
     ],
-    "routes": [ 
-	    {
-            "src": "/static/(.*)", 
-            "dest": "/static/$1"
-	    }, 
-	    {
-            "src":"/(.*)", 
+    "routes": [
+        {
+            "src": "/(.*)",
             "dest": "HRMS/wsgi.py"
-	    }
+        }
     ]
-} 
+}
