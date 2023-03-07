@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <form method='POST' action='/analyze/'>
+    {% csrf_token %}
+    <div class="container">
+        <div class="mb-3 mt-3">
+            <div class="row">
+                <h1 class="text-center mb-3">Enter your text to analyze below!!</h1>
+            </div>
+            <textarea name='text' class="form-control" id="exampleFormControlTextarea1" rows="19" placeholder="Enter the text you want to analyze..."></textarea>
+        </div>
+        <!--Button 1-->
+        <div class="form-check"> 
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="punctuation"> 
+            <label class="form-check-label" for="gridRadios1"> Remove Punctuation </label>
+        </div>
+        <!--Button 2-->
+        <div class="form-check mt-1"> 
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="title"> 
+            <label class="form-check-label" for="gridRadios2"> Title </label>
+        </div>
+        <!--Button 3-->
+        <div class="form-check mt-1"> 
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="upper"> 
+            <label class="form-check-label" for="gridRadios3"> Upper </label>
+        </div>
+        <!--Button 4-->
+        <div class="form-check mt-1"> 
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="lower"> 
+            <label class="form-check-label" for="gridRadios4"> Lower </label>
+        </div>
+        <!--Button 5-->
+        <div class="form-check mt-1"> 
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5" value="invert"> 
+            <label class="form-check-label" for="gridRadios5"> Invert </label>
+        </div>
+        <!--Submit Button-->
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Analyze text</button>
+            <input class="btn btn-secondary ms-1" type="reset" value="Clear Text">
+        </div>
+    </div>
+</form>
+{% endblock content %}

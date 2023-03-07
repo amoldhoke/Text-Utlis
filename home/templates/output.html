@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Analyzing Your Text...{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Your Analyzed Text - {{ purpose }}</h1>
+    <div class="my-3">
+        <textarea name='text' class="form-control" id="exampleFormControlTextarea1" rows="19">{{ analyzed_text }}</textarea>
+    </div>
+    <button class="btn btn-secondary ms-1" onclick="copyToClipboard()">Copy to Clipboard</button>
+   
+    <div class="mt-4">
+        <p>Total spaces = {{ counts.Spaces }}</p>
+        <p>Total alphabets = {{ counts.Alphabets }}</p>
+        <p>Total numbers = {{ counts.Numbers }}</p>
+        <p>Total punctuations = {{ counts.Punctuations }}</p>
+    </div>
+</div>
+{% endblock content %}

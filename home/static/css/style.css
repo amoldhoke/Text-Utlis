@@ -1,0 +1,16 @@
+:root {
+    --bg-color: #f1f1f1; /* light background color */
+    --text-color: #333; /* light text color */
+    --dark-bg-color: #333; /* dark background color */
+    --dark-text-color: #f1f1f1; /* dark text color */
+  }
+  
+  :root[data-theme='dark'] {
+    --bg-color: var(--dark-bg-color);
+    --text-color: var(--dark-text-color);
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
